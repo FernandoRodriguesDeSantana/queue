@@ -3,15 +3,30 @@
 
 #define LINEAR_QUEUE_FUNCTIONS
 
-void eStore(void);
+// THE QUEUE STRUCT:
+////////////////////
+// Creating the node
+typedef struct Node
+{
+    int value;
+    struct Node *next;
+} Node;
 
-void eList(void);
+// Creating the queue
+typedef struct Queuee
+{
+    struct Node *head;
+    struct Node *tail;
+} Queuee;
+//////////////////////
 
-void eRemove(void);
 
-void eQstore(char *q);
-
-void eQretrieve(void);
+// CREATING FUNCTION HEADERS:
+/////////////////////////////////////////
+Node *buildNode(int value);
+void enqueuee(Queuee *queuee, int value);
+void printQueuee(Queuee *queuee);
+/////////////////////////////////////////
 
 #endif
 

@@ -3,46 +3,33 @@
 #include <stdio.h>
 #include <string.h>
 
-int spos = 0;
-int rpos = 0;
-
-void eStore(void)
+Node *buildNode(int value)
 {
-    char s[256];
-    char *p;
-
-    do
+    //allocating memory
+    Node *newNode = malloc(sizeof(Node));
+    if(newNode == NULL)
     {
-        printf("\nEnter the event number %d: ", spos+1);
-        gets(s);
-
-        if(*s == 0)
-        {
-            break;
-        }
-
-        p = malloc(strlen(s) + 1);
-
-
+        printf("\nERROR IN THE MEMORY ALLOCATION");
+        return NULL;
     }
+
+    //assigning a value to variable "value" and "next"
+    newNode -> value = value;
+    newNode -> next = NULL;
+    return newNode;
 }
 
-void eList(void)
+void enqueuee(Queuee *queuee, int value)
 {
+    Node *newNode = buildNode(value);
 
-}
-
-void eRemove(void)
-{
-
-}
-
-void eQstore(char *q)
-{
-
-}
-
-void eQretrieve(void)
-{
-
+    if(queuee -> tail == NULL)
+    {
+        queuee -> head = newNode;
+        queuee -> tail = newNode;
+    } else
+    {
+        queuee -> tail -> next = newNode;
+        queuee -> tail = newNode;
+    }
 }

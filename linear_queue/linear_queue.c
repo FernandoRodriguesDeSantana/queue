@@ -33,3 +33,16 @@ void enqueuee(Queuee *queuee, int value)
         queuee -> tail = newNode;
     }
 }
+
+void printQueuee(Queuee *queuee)
+{
+    // start at the first position
+    Node *actual = queuee -> head;
+    while(actual != NULL)
+    {
+        printf("%d ", actual -> value);
+        // start position ++
+        actual = actual -> next;
+    }
+    printf("\n");
+}

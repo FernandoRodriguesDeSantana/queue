@@ -17,6 +17,7 @@ typedef struct Queuee
 {
     struct Node *head;
     struct Node *tail;
+    int queuee_size;
 } Queuee;
 //////////////////////
 
@@ -26,6 +27,7 @@ typedef struct Queuee
 Node *buildNode(int value);
 void enqueuee(Queuee *queuee, int value);
 void printQueuee(Queuee *queuee);
+int desenqueuee(Queuee *queuee);
 /////////////////////////////////////////
 
 #endif

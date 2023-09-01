@@ -14,5 +14,10 @@ int main()
 
     printf("Queuee elements: \n");
     printQueuee(&queuee);
+
+    desenqueuee(&queuee);
+
+    printf("Queuee elements: \n");
+    printQueuee(&queuee);
     return 0;
 }

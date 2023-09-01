@@ -46,3 +46,18 @@ void printQueuee(Queuee *queuee)
     }
     printf("\n");
 }
+
+
+int desenqueuee(Queuee *queuee)
+{ if(queuee -> head == NULL)
+    {
+        return 1;
+    } else
+    {
+        Node *actual = queuee -> head;
+        queuee -> head = queuee -> head -> next;
+        free(actual);
+        desenqueuee(queuee);
+    }
+}
+
